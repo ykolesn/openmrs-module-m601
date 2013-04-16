@@ -16,6 +16,8 @@ package org.openmrs.module.updatecss.api.impl;
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import org.openmrs.module.updatecss.UpdateCSS;
 import org.openmrs.module.updatecss.api.UpdateCSSService;
 import org.openmrs.module.updatecss.api.db.UpdateCSSDAO;
 
@@ -40,5 +42,15 @@ public class UpdateCSSServiceImpl extends BaseOpenmrsService implements UpdateCS
      */
     public UpdateCSSDAO getDao() {
 	    return dao;
+    }
+    
+    public void saveData(UpdateCSS updateCSS){
+		System.out.println("Save data service method called:");
+		System.out.println("form data tomcat location was:"+updateCSS.getHomeDirectory());
+		System.out.println("form data cssData was:"+updateCSS.getCssData());
+	}
+    
+    public void getData(){
+    	System.out.println("Get data service method called:");
     }
 }

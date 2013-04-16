@@ -16,21 +16,44 @@ package org.openmrs.module.updatecss.web.controller;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.context.Context;
+import org.openmrs.module.updatecss.UpdateCSS;
+import org.openmrs.module.updatecss.api.UpdateCSSService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 /**
  * The main controller.
  */
 @Controller
+@SessionAttributes({"updateCSS"})
 public class  UpdateCSSManageController {
 	
 	protected final Log log = LogFactory.getLog(getClass());
 	
+	//this method creates an UpdateCSS object the first time this controller is loaded
+	@ModelAttribute("updateCSS")
+	public UpdateCSS getPatientSearchObject(){
+		System.out.println("CREATING NEW UpdateCSS OBJECT");
+		return new UpdateCSS();
+	}
+	
+	//auto generated method from the initial creation of this module
 	@RequestMapping(value = "/module/updatecss/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
 		model.addAttribute("user", Context.getAuthenticatedUser());
+	}
+	
+	//class added by yuri to show how the manage.jsp form links to the controller
+	@RequestMapping(value = "module/updatecss/updateCSS", method = RequestMethod.POST)
+	public String updateCSSData(@ModelAttribute("updateCSS") UpdateCSS updateCSS){
+		UpdateCSSService cssService = Context.getService(UpdateCSSService.class);
+		//examples of how to call service methods
+		cssService.saveData(updateCSS);
+		cssService.getData();
+		return "redirect:/module/updatecss/manage.form";
 	}
 }

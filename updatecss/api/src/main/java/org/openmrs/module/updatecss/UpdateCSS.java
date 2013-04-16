@@ -25,6 +25,8 @@ public class UpdateCSS extends BaseOpenmrsObject implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
+	private String homeDirectory;
+	private String cssData;
 	
 	@Override
 	public Integer getId() {
@@ -34,6 +36,22 @@ public class UpdateCSS extends BaseOpenmrsObject implements Serializable {
 	@Override
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public String getHomeDirectory() {
+		return homeDirectory;
+	}
+
+	public void setHomeDirectory(String homeDirectory) {
+		this.homeDirectory = homeDirectory;
+	}
+
+	public String getCssData() {
+		return cssData;
+	}
+
+	public void setCssData(String cssData) {
+		this.cssData = cssData;
 	}
 	
 }

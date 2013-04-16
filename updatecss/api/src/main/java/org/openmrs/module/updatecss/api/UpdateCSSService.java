@@ -14,6 +14,7 @@
 package org.openmrs.module.updatecss.api;
 
 import org.openmrs.api.OpenmrsService;
+import org.openmrs.module.updatecss.UpdateCSS;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -28,9 +29,6 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 public interface UpdateCSSService extends OpenmrsService {
-     
-	/*
-	 * Add service methods here
-	 * 
-	 */
+    public void saveData(UpdateCSS updateCSS); 
+	public void getData();
 }
