@@ -16,6 +16,7 @@ package org.openmrs.module.updatecss.api.db.hibernate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.SessionFactory;
+import org.openmrs.module.updatecss.UpdateCSS;
 import org.openmrs.module.updatecss.api.db.UpdateCSSDAO;
 
 /**
@@ -39,4 +40,15 @@ public class HibernateUpdateCSSDAO implements UpdateCSSDAO {
     public SessionFactory getSessionFactory() {
 	    return sessionFactory;
     }
+    
+
+	@Override
+	public void saveCSSData(UpdateCSS cssData) {
+	}
+
+	@Override
+	public UpdateCSS getCSSData() {
+		return (UpdateCSS) sessionFactory.getCurrentSession().get(UpdateCSS.class, 1);
+	}
+	
 }

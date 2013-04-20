@@ -5,16 +5,16 @@
 
 <hibernate-mapping package="org.openmrs.module.updatecss">
 
-<!--
-	<class name="UpdateCSS"
-		table="${project.parent.artifactId}_UpdateCSS">
-		<id name="id" type="int" column="id" unsaved-value="0">
-			<generator class="native" />
-		</id>
-		<discriminator column="id" insert="false" />
-		<property name="uuid" type="java.lang.String" column="uuid"
-			length="38" unique="true" />
-	</class>
--->
+<class name="UpdateCSS"
+	table="css_properties">
+        <id name="Id" type="int" column="id">
+            <generator class="native"/>
+        </id>
+		<property name="cssData" type="java.lang.String" column="css_location"
+			length="255" not-null="true" />
+		<property name="homeDirectory" type="java.lang.String" column="tomcat_home"
+			length="255" not-null="true"/>
+        <property name="uuid" type="java.lang.String" column="uuid" length="38" unique="true" />
+</class>
 
 </hibernate-mapping>

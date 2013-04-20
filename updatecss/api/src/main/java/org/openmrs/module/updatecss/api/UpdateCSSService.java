@@ -30,5 +30,5 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface UpdateCSSService extends OpenmrsService {
     public void saveData(UpdateCSS updateCSS); 
-	public void getData();
+	public UpdateCSS getData();
 }

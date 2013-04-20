@@ -45,12 +45,10 @@ public class UpdateCSSServiceImpl extends BaseOpenmrsService implements UpdateCS
     }
     
     public void saveData(UpdateCSS updateCSS){
-		System.out.println("Save data service method called:");
-		System.out.println("form data tomcat location was:"+updateCSS.getHomeDirectory());
-		System.out.println("form data cssData was:"+updateCSS.getCssData());
+    	dao.saveCSSData(updateCSS);
 	}
     
-    public void getData(){
-    	System.out.println("Get data service method called:");
+    public UpdateCSS getData() {
+    	return dao.getCSSData();
     }
 }

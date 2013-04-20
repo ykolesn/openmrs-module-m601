@@ -13,6 +13,7 @@
  */
 package org.openmrs.module.updatecss.api.db;
 
+import org.openmrs.module.updatecss.UpdateCSS;
 import org.openmrs.module.updatecss.api.UpdateCSSService;
 
 /**
@@ -20,7 +21,10 @@ import org.openmrs.module.updatecss.api.UpdateCSSService;
  */
 public interface UpdateCSSDAO {
 	
-	/*
-	 * Add DAO methods here
-	 */
+	/* Set location for user-defined CSS file */
+	public void saveCSSData(UpdateCSS cssData);
+	
+	/* Retrieve currently-set CSS file location */
+	public UpdateCSS getCSSData();
+	
 }

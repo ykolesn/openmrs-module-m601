@@ -24,16 +24,16 @@
 	<bean parent="serviceContext">
 		<property name="moduleService">
 			<list>
-				<value>${project.parent.groupId}.${project.parent.artifactId}.api.UpdateCSSService</value>
+				<value>org.openmrs.module.updatecss.api.UpdateCSSService</value>
 				<bean
 					class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
 					<property name="transactionManager">
 						<ref bean="transactionManager" />
 					</property>
 					<property name="target">
-						<bean class="${project.parent.groupId}.${project.parent.artifactId}.api.impl.UpdateCSSServiceImpl">
+						<bean class="org.openmrs.module.updatecss.api.impl.UpdateCSSServiceImpl">
 							<property name="dao">
-								<bean class="${project.parent.groupId}.${project.parent.artifactId}.api.db.hibernate.HibernateUpdateCSSDAO">
+								<bean class="org.openmrs.module.updatecss.api.db.hibernate.HibernateUpdateCSSDAO">
 									<property name="sessionFactory">
 										<ref bean="sessionFactory" />
 									</property>

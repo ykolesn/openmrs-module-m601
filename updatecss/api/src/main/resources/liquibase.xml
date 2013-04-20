@@ -8,5 +8,19 @@
         See http://www.liquibase.org/manual/home#available_database_refactorings
         for a list of supported elements and attributes
     -->
-    
+
+    <changeSet id="updatecss-2013-04-20-23:00" author="yurijeffroshnajon">
+        <createTable tableName="css_properties">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="css_location" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tomcat_home" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+        
 </databaseChangeLog>
