@@ -16,6 +16,7 @@ package org.openmrs.module.updatecss.api;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.openmrs.api.context.Context;
+import org.openmrs.module.updatecss.UpdateCSS;
 import org.openmrs.test.BaseModuleContextSensitiveTest;
 
 /**
@@ -27,4 +28,13 @@ public class  UpdateCSSServiceTest extends BaseModuleContextSensitiveTest {
 	public void shouldSetupContext() {
 		assertNotNull(Context.getService(UpdateCSSService.class));
 	}
+	
+/*	@Test
+	public void shouldGetDBValues() {
+		UpdateCSSService service = Context.getService(UpdateCSSService.class);
+		UpdateCSS updateCSS = new UpdateCSS();
+		updateCSS.setCssData("mydir");
+		updateCSS.setHomeDirectory("home");
+		service.saveData(updateCSS);
+	}	*/
 }

@@ -9,7 +9,7 @@
         for a list of supported elements and attributes
     -->
 
-    <changeSet id="updatecss-2013-04-20-23:00" author="yurijeffroshnajon">
+    <!-- <changeSet id="updatecss-2013-04-20-26:00" author="yurijeffroshnajon" runOnChange="true">
         <createTable tableName="css_properties">
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -21,6 +21,6 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-    </changeSet>
+    </changeSet> -->
         
 </databaseChangeLog>
