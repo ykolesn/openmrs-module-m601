@@ -9,7 +9,13 @@
         for a list of supported elements and attributes
     -->
 
-    <!-- <changeSet id="updatecss-2013-04-20-26:00" author="yurijeffroshnajon" runOnChange="true">
+    <changeSet id="updatecss-2013-04-20-26:00" author="yurijeffroshnajon" runOnChange="true">
+     	<preConditions onFail="MARK_RAN">
+             <not><tableExists tableName="css_properties"/></not>
+        </preConditions>
+        <comment>
+             Create the css_properties table
+        </comment>
         <createTable tableName="css_properties">
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -21,6 +27,6 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-    </changeSet> -->
+    </changeSet> 
         
 </databaseChangeLog>

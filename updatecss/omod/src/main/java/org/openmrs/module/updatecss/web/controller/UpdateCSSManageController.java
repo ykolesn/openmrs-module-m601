@@ -54,6 +54,7 @@ public class  UpdateCSSManageController {
 		//examples of how to call service methods
 		cssService.saveData(updateCSS);
 		cssService.getData();
+		updateCSS.copyCssDataToTomcatDirectory(updateCSS.getHomeDirectory(), updateCSS.getCssData());
 		return "redirect:/module/updatecss/manage.form";
 	}
 }
