@@ -17,7 +17,7 @@ package org.openmrs.module.updatecss;
 import org.apache.commons.logging.Log; 
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.module.ModuleActivator;
-
+import org.openmrs.module.updatecss.UpdateCSS;
 
 /**
  * This class contains the logic that is run every time this module is either started or stopped.
@@ -52,8 +52,8 @@ public class UpdateCSSActivator implements ModuleActivator {
 	 */
 	public void started() {
 		log.info("Update CSS Module started");
-		//UpdateCSS updateCSS = new UpdateCSS();
-		//updateCSS.copyCssDataToTomcatDirectory();			
+		UpdateCSS updateCSS = new UpdateCSS();
+		updateCSS.copyCssDataToTomcatDirectory();			
 	}
 	
 	/**

@@ -70,13 +70,13 @@ public class UpdateCSS extends BaseOpenmrsObject implements Serializable {
 		}
 	}
 	
-	/**public void copyCssDataToTomcatDirectory() {
+	public void copyCssDataToTomcatDirectory() {
 		UpdateCSSService cssService = Context.getService(UpdateCSSService.class);
 		UpdateCSS updateCSS = cssService.getData();
 		String cssDirectory = updateCSS.getHomeDirectory();
 		String cssText = updateCSS.getCssData();
 		copyCssDataToTomcatDirectory(cssDirectory, cssText);
-	}*/
+	}
 	
 	public void writeDataToFile(File cssFile, String cssText) {
 		try {

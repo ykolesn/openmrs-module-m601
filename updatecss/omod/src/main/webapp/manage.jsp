@@ -12,7 +12,7 @@
         </tr>
         <tr>
   	 	<form:label path="cssData"><b>Custom CSS:</b></form:label>
-  	 	<form:input path="cssData" />
+  	 	<form:textarea path="cssData" />
     	</tr>
     	<tr>
     	 	<input type="submit" value="Save Settings"/>
