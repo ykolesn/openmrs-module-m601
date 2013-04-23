@@ -39,10 +39,13 @@ public class  UpdateCSSManageController {
 	public UpdateCSS getPatientSearchObject(){
 		UpdateCSS currCSS = Context.getService(UpdateCSSService.class).getData();
 		
-		if (currCSS == null)
-			return new UpdateCSS();
-		else
+		if (currCSS == null) {
+			UpdateCSS newCSS = new UpdateCSS();
+			newCSS.setHomeDirectory(System.getProperty("catalina.base") + "\\webapps\\openmrs-standalone\\style.css");
+			return newCSS;
+		} else {
 			return currCSS;
+		}
 	}
 	
 	//auto generated method from the initial creation of this module

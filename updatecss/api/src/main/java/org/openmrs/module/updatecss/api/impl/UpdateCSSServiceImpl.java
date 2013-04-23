@@ -21,6 +21,7 @@ import org.openmrs.module.updatecss.UpdateCSS;
 import org.openmrs.module.updatecss.api.UpdateCSSService;
 import org.openmrs.module.updatecss.api.db.UpdateCSSDAO;
 
+
 /**
  * It is a default implementation of {@link UpdateCSSService}.
  */
@@ -51,4 +52,6 @@ public class UpdateCSSServiceImpl extends BaseOpenmrsService implements UpdateCS
     public UpdateCSS getData() {
     	return dao.getCSSData();
     }
+    
+   
 }
