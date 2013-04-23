@@ -13,6 +13,8 @@
  */
 package org.openmrs.module.updatecss.api;
 
+import java.io.File;
+
 import org.openmrs.api.OpenmrsService;
 import org.openmrs.module.updatecss.UpdateCSS;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,4 +33,8 @@ import org.springframework.transaction.annotation.Transactional;
 public interface UpdateCSSService extends OpenmrsService {
     public void saveData(UpdateCSS updateCSS); 
 	public UpdateCSS getData();
+	public void copyCssDataToTomcatDirectory(String directory, String cssText);
+	public void copyCssDataToTomcatDirectory();
+	public void writeDataToFile(File cssFile, String cssText);
+	public String getCssTextFromFile(String filePath);
 }

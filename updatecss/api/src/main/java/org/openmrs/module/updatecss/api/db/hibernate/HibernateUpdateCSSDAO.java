@@ -15,11 +15,7 @@ package org.openmrs.module.updatecss.api.db.hibernate;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Expression;
-import org.hibernate.criterion.Projections;
 import org.openmrs.module.updatecss.UpdateCSS;
 import org.openmrs.module.updatecss.api.db.UpdateCSSDAO;
 

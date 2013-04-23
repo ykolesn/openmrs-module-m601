@@ -5,12 +5,11 @@
 
 <p>Hello ${user.systemId}!</p>
 <form:form modelAttribute="updateCSS" method="POST" action="updateCSS.form" >
-	<table>
+	<table cellpadding="10">
 		<tr>
         <form:label path="homeDirectory"><b>CSS File Path:</b></form:label>
         <form:input size="125" path="homeDirectory" />
         </tr>
-        <tr></tr>
         <tr>
   	 	<form:label path="cssData"><b>Custom CSS:</b></form:label>
   	 	<form:textarea rows="30" cols="125" path="cssData" />

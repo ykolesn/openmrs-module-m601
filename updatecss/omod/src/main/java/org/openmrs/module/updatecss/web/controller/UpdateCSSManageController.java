@@ -37,12 +37,13 @@ public class  UpdateCSSManageController {
 	//this method creates an UpdateCSS object the first time this controller is loaded
 	@ModelAttribute("updateCSS")
 	public UpdateCSS getPatientSearchObject(){
-		UpdateCSS currCSS = Context.getService(UpdateCSSService.class).getData();
+		UpdateCSSService cssService = Context.getService(UpdateCSSService.class);
+		UpdateCSS currCSS = cssService.getData();
 		
 		if (currCSS == null) {
 			UpdateCSS newCSS = new UpdateCSS();
 			newCSS.setHomeDirectory(System.getProperty("catalina.base") + "\\webapps\\openmrs-standalone\\style.css");
-			newCSS.setCssData(newCSS.getCssTextFromFile(newCSS.getHomeDirectory()));
+			newCSS.setCssData(cssService.getCssTextFromFile(newCSS.getHomeDirectory()));
 			return newCSS;
 		} else {
 			return currCSS;
@@ -62,7 +63,7 @@ public class  UpdateCSSManageController {
 		//examples of how to call service methods
 		cssService.saveData(updateCSS);
 		updateCSS = cssService.getData();
-		updateCSS.copyCssDataToTomcatDirectory(updateCSS.getHomeDirectory(), updateCSS.getCssData());
+		cssService.copyCssDataToTomcatDirectory(updateCSS.getHomeDirectory(), updateCSS.getCssData());
 		return "redirect:/module/updatecss/manage.form";
 	}
 }

@@ -16,8 +16,9 @@ package org.openmrs.module.updatecss;
 
 import org.apache.commons.logging.Log; 
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.api.context.Context;
 import org.openmrs.module.ModuleActivator;
-import org.openmrs.module.updatecss.UpdateCSS;
+import org.openmrs.module.updatecss.api.UpdateCSSService;
 
 /**
  * This class contains the logic that is run every time this module is either started or stopped.
@@ -55,8 +56,8 @@ public class UpdateCSSActivator implements ModuleActivator {
 		
 		// When the module loads, copy the css data
 		// to the tomcat directory CSS file
-		UpdateCSS updateCSS = new UpdateCSS();
-		updateCSS.copyCssDataToTomcatDirectory();			
+		UpdateCSSService cssService = Context.getService(UpdateCSSService.class);
+		cssService.copyCssDataToTomcatDirectory();			
 	}
 	
 	/**
