@@ -29,7 +29,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
  * The main controller.
  */
 @Controller
-@SessionAttributes({"updateCSS"})
 public class  UpdateCSSManageController {
 	
 	protected final Log log = LogFactory.getLog(getClass());
