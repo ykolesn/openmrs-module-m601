@@ -19,6 +19,8 @@ import org.openmrs.BaseOpenmrsMetadata;
 
 import java.io.IOException;
 import org.apache.commons.io.FileUtils;
+import org.openmrs.api.context.Context;
+import org.openmrs.module.updatecss.api.UpdateCSSService;
 import org.openmrs.util.OpenmrsUtil;
 import java.io.PrintWriter;
 import java.io.File;

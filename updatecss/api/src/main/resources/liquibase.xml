@@ -9,7 +9,7 @@
         for a list of supported elements and attributes
     -->
 
-    <changeSet id="updatecss-2013-04-20-26:00" author="yurijeffroshnajon" runOnChange="true">
+    <changeSet id="updatecss-2013-04-22-26:00" author="yurijeffroshnajon" runOnChange="true">
      	<preConditions onFail="MARK_RAN">
              <not><tableExists tableName="css_properties"/></not>
         </preConditions>
@@ -20,7 +20,7 @@
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="css_location" type="varchar(255)">
+            <column name="css_location" type="longtext">
                 <constraints nullable="false"/>
             </column>
             <column name="tomcat_home" type="varchar(255)">

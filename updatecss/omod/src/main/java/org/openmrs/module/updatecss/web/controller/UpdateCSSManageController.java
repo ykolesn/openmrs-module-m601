@@ -37,8 +37,12 @@ public class  UpdateCSSManageController {
 	//this method creates an UpdateCSS object the first time this controller is loaded
 	@ModelAttribute("updateCSS")
 	public UpdateCSS getPatientSearchObject(){
-		System.out.println("CREATING NEW UpdateCSS OBJECT");
-		return new UpdateCSS();
+		UpdateCSS currCSS = Context.getService(UpdateCSSService.class).getData();
+		
+		if (currCSS == null)
+			return new UpdateCSS();
+		else
+			return currCSS;
 	}
 	
 	//auto generated method from the initial creation of this module
@@ -53,7 +57,7 @@ public class  UpdateCSSManageController {
 		UpdateCSSService cssService = Context.getService(UpdateCSSService.class);
 		//examples of how to call service methods
 		cssService.saveData(updateCSS);
-		cssService.getData();
+		updateCSS = cssService.getData();
 		updateCSS.copyCssDataToTomcatDirectory(updateCSS.getHomeDirectory(), updateCSS.getCssData());
 		return "redirect:/module/updatecss/manage.form";
 	}
