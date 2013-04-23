@@ -52,6 +52,9 @@ public class UpdateCSSActivator implements ModuleActivator {
 	 */
 	public void started() {
 		log.info("Update CSS Module started");
+		
+		// When the module loads, copy the css data
+		// to the tomcat directory CSS file
 		UpdateCSS updateCSS = new UpdateCSS();
 		updateCSS.copyCssDataToTomcatDirectory();			
 	}

@@ -65,6 +65,10 @@ public class UpdateCSS extends BaseOpenmrsObject implements Serializable {
 		this.cssData = cssData;
 	}
 	
+	/**
+	 * Replaces the text of the specified CSS file in the
+	 * specified directory with the specified text
+	 */
 	public void copyCssDataToTomcatDirectory(String directory, String cssText) {
 		File cssFile = new File(directory);
 		if (cssFile.exists()) {
@@ -72,6 +76,10 @@ public class UpdateCSS extends BaseOpenmrsObject implements Serializable {
 		}
 	}
 	
+	/**
+	 * Copies the data stored in the DB into the CSS file that is saved in the 
+	 * directory column of the css_properties table
+	 */
 	public void copyCssDataToTomcatDirectory() {
 		UpdateCSSService cssService = Context.getService(UpdateCSSService.class);
 		UpdateCSS updateCSS = cssService.getData();
@@ -80,6 +88,9 @@ public class UpdateCSS extends BaseOpenmrsObject implements Serializable {
 		copyCssDataToTomcatDirectory(cssDirectory, cssText);
 	}
 	
+	/**
+	 * Writes the specified text to the specified CSS file
+	 */
 	public void writeDataToFile(File cssFile, String cssText) {
 		try {
 			if (cssFile.exists()) {
@@ -90,6 +101,24 @@ public class UpdateCSS extends BaseOpenmrsObject implements Serializable {
 		} catch (FileNotFoundException ex) {
 			
 		}
+	}
+	
+	/**
+	 * Reads the data in the file at the specified path and returns
+	 * a String with the contents. If the file doesn't exist
+	 * then it returns an empty string
+	 */
+	public String getCssTextFromFile(String filePath) {
+		String cssText = "";
+		try {
+			File cssFile = new File(filePath);
+			if (cssFile.exists()) {
+				cssText = FileUtils.readFileToString(cssFile);
+			}	
+		} catch (IOException ex) {
+		
+		}
+		return cssText;
 	}
 	
 }

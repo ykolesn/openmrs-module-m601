@@ -42,6 +42,7 @@ public class  UpdateCSSManageController {
 		if (currCSS == null) {
 			UpdateCSS newCSS = new UpdateCSS();
 			newCSS.setHomeDirectory(System.getProperty("catalina.base") + "\\webapps\\openmrs-standalone\\style.css");
+			newCSS.setCssData(newCSS.getCssTextFromFile(newCSS.getHomeDirectory()));
 			return newCSS;
 		} else {
 			return currCSS;
